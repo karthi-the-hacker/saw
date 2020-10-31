@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+./.banner
+#read -p "Enter the full path with file name: " fl
+read -p "Enter comany name: " comp
+mkdir ~/recon/$comp &> /dev/null
+mkdir ~/recon/$comp/saw &> /dev/null
+
+cp $1 ~/recon/$comp/saw/
+cd ~/recon/$comp/saw
+mv live.txt hosts
+meg -d 1000 -v ~/tools/saw/path.txt
